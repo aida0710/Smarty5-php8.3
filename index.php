@@ -3,23 +3,28 @@
 require_once 'vendor/autoload.php';
 require_once 'config.php';
 
+use Smarty\Smarty;
 use src\SmartyView;
 use Smarty\Exception as ExceptionAlias;
 use Smarty\Extension\CoreExtension;
 use Smarty\Extension\DefaultExtension;
-use Smarty\Smarty;
 
 $smarty = new SmartyView();
 
-$smarty->setTemplateDir( ROOT . '/templates/' );
-$smarty->setCompileDir( ROOT . 'data/cache/templates/' );
+$smarty->setTemplateDir( './templates/' );
+$smarty->setCompileDir( './cache/templates/' );
+
 $smarty->setExtensions([
     new CoreExtension(),
     new DefaultExtension(),
 ]);
 
-if (!is_writable(ROOT . 'data/cache/templates/')) {
-    die('Cache directory is not writable.');
+if (!file_exists('./cache/templates/')) {
+    mkdir('./cache/templates/', 0700, true);
+}
+
+if (!is_writable('./cache/templates/')) {
+    die('キャッシュ ディレクトリは書き込み可能ではありません');
 }
 
 //$smarty->addPluginsDir( ROOT . 'libs/smarty-plugins/' );
