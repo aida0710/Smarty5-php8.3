@@ -1,0 +1,16 @@
+{
+    "name": "aida/smarty5",
+    "description": "smrty5の仕様に慣れる目的のリポジトリ",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "author": "Masaki Aida",
+    "require": {
+        "php": ">=8.3",
+        "smarty/smarty": ">=v5.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "src\\": "src/"
+        }
+    }
+}
