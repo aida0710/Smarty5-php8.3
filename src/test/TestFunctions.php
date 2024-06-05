@@ -1,6 +1,6 @@
 <?php
 
-namespace src;
+namespace src\test;
 
 class TestFunctions {
     public function allExecuteFunction(): void {
@@ -9,7 +9,6 @@ class TestFunctions {
         //$this->testFilePutContents();
         $this->testErrorLog();
         $this->testSyslog();
-        $this->logger();
     }
 
     public function testVarDump(): void {

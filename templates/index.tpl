@@ -2,9 +2,9 @@
 
 {block name=body}
 	<h2>Todo App</h2>
-	<form action="../index.php" method="post">
+	<form action="/" method="post">
 		<label>
-			<input type="text" name="task" autocomplete="off" autofocus placeholder="タスクを入力してください">
+			<input type="text" name="task" autofocus autocomplete="off" placeholder="タスクを入力してください">
 		</label>
 		<button type="submit">追加</button>
 	</form>
@@ -13,7 +13,7 @@
         {foreach $tasks as $index => $task}
 			<li>
                 {$task}
-				<form action="../index.php" method="post" style="display: inline;">
+				<form action="/" method="post" style="display: inline;">
 					<input type="hidden" name="delete" value="{$index}">
 					<button type="submit">削除</button>
 				</form>
